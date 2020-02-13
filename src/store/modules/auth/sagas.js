@@ -24,6 +24,10 @@ export function* signIn({ payload }) {
 
     api.defaults.headers.Authorization = `Bearer ${token}`;
 
+    // Adicionar um delay no aplicativo
+    // Nas importações: import { delay } from 'redux-saga/effects';
+    // yield delay(3000);
+
     yield put(signInSuccess(token, user));
 
     // history.push('/dashboard');
@@ -41,7 +45,6 @@ export function* signUp({ payload }) {
       name,
       email,
       password,
-      provider: true,
     });
 
     // history.push('/');
