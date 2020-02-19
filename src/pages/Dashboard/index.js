@@ -43,7 +43,9 @@ export default function Dashboard() {
         <List
           data={appointments}
           keyExtractor={item => String(item.id)}
-          renderItem={({ item }) => <Appointment onCancel={() => handleCancel(item.id)} data={item} />}
+          renderItem={({ item }) => (
+            <Appointment onCancel={() => handleCancel(item.id)} data={item} />
+          )}
         />
       </Container>
     </Background>
@@ -52,5 +54,7 @@ export default function Dashboard() {
 
 Dashboard.navigationOptions = {
   tabBarLabel: 'Agendamentos',
-  tabBarIcon: ({ tintColor }) => <Icon name="event" size={20} color={tintColor} />,
+  tabBarIcon: ({ tintColor }) => (
+    <Icon name="event" size={20} color={tintColor} />
+  ),
 };
